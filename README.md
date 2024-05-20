@@ -9,7 +9,11 @@
 
 # 프로그램 
 - Windows Task Schduler 실행용
-  - 퇴근 5분 전 실행 
+  - 퇴근 5분 전 실행
+# 패키지
+- requests 패키지
+
+`pip install requests`
 
 # 노션 연결 화면
 <img src="/page.png" width="335" height="446" alt="사용 중인 노션 상세 페이지 화면" />
