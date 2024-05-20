@@ -1,6 +1,6 @@
 import json
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 key_database_id = "데이터베이스id"
 api_key = "내프라이빗스크릿키"
@@ -30,11 +30,12 @@ page_title = f"{new_number}차 : 제목"
 
 today = datetime.now().date()
 yesterday = today - timedelta(days=1)
+gmt_plus_9 = timezone(timedelta(hours=9))
 
-h_start = datetime.combine(yesterday, datetime.strptime("19:30", "%H:%M").time())
-h_end = datetime.combine(today, datetime.strptime("11:30", "%H:%M").time())
-e_start = datetime.combine(today, datetime.strptime("11:30", "%H:%M").time())
-e_end = datetime.combine(today, datetime.strptime("19:30", "%H:%M").time())
+h_start = datetime.combine(yesterday, datetime.strptime("19:30", "%H:%M").time(), gmt_plus_9)
+h_end = datetime.combine(today, datetime.strptime("11:30", "%H:%M").time(), gmt_plus_9)
+e_start = datetime.combine(today, datetime.strptime("11:30", "%H:%M").time(), gmt_plus_9)
+e_end = datetime.combine(today, datetime.strptime("19:30", "%H:%M").time(), gmt_plus_9)
 
 format_h_start = h_start.isoformat()
 format_h_end = h_end.isoformat()
